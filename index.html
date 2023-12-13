@@ -206,6 +206,17 @@
 <font color=#10A4F9><center><b><font size=40>Welcome!</font></b></center>
 <br><center>You have stumbled across the Poodleschool Devlopment suite! This site is currently a mess, I would stay away unless you know what your doing<br>You will automaticly be redirected to our offical website (Poodleschool.net)</center>
 <script>
-  wait('7000')
-  window.location.href = "https://poodleschool.net";
+  function wait(msString) {
+    const milliseconds = parseInt(msString, 10); // Convert string to number
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+}
+
+async function execute() {
+    console.log("Start");
+    await wait('7000'); // Wait for 7 seconds (passed as a string)
+    console.log("Waited for 7 seconds");
+    window.location.href = "https://poodleschool.net";
+}
+
+execute();
 </script>
